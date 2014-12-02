@@ -1,0 +1,23 @@
+{% extends 'base.html' %}
+{% import "macros/forms.html" as forms %}
+
+{% block scripts %}
+  <script src="{{static}}/src/js/main.js"></script>
+{% endblock %}
+
+{% block styles %}
+  <link rel="stylesheet" href="{{static}}/src/css/style.css" type="text/css" />
+{% endblock %}
+
+{% block content %}
+<div class="container">
+  <form method="post" class="form-inline" role="form" id="commands">
+    {{forms.textarea("q", 'placeholder="Enter script"', "", "full-width")}}
+    <input type="submit" value="Run" class="btn btn-primary margin-top pull-right" />
+    <div style="clear: both"></div>
+  </form>
+  <div id="results">
+
+  </div>
+</div>
+{% endblock %}
